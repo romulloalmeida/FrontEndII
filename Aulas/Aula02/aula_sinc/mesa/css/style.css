@@ -1,0 +1,18 @@
+.section{
+    display: flex;
+    grid-template-columns: auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    
+}
+
+.jogador{
+    height: 200px;
+    width: 200px;
+}
+
+.maquina{
+    height: 200px;
+    width: 200px;
+}
