@@ -7,7 +7,7 @@ let div = document.createElement('div');
 let pSobre = document.createElement('p');
 let pContato = document.createElement('p');
 pSobre.textContent = "Sou Rômullo de Almeida, o responsável pela produção deste site!";
-pContato.textContent = "Você pode entrar em contato comigo por este e-mail. romulloalmeida@bol.com.br";
+pContato.innerHTML = 'Você pode entrar em contato comigo por este e-mail. <a href="mailto:romulloalmeida@bol.com.br">romulloalmeida@bol.com.br</a>';
 
 // Inserindo o conteteúdo dentro da div
 div.appendChild(pSobre);
