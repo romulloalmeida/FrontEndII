@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Listas de Animes</title>
+</head>
+
+<body>
+    <form action="index.html" class="formulario" id="formulario">
+        <fieldset>
+            <legend>Informação</legend>
+            <label for="nome">Nome do Anime</label>
+            <input type="text" name="nome" id="nomeInput">
+            <label for="nome">Imagem</label>
+            <input type="text" name="imagem" id="imagemInput">
+            <label for="nome">Persongem (de 0 a 10)</label>
+            <input type="text" name="personagem" id="personagemInput">
+            <label for="nome">Enredo (de 0 a 10)</label>
+            <input type="text" name="enredo" id="enredoInput">
+            <label for="nome">Conclusão (de 0 a 10)</label>
+            <input type="text" name="conclusao" id="conclusaoInput">
+            <label for="nome">Abertura (de 0 a 10)</label>
+            <input type="text" name="abertura" id="aberturaInput">
+            <label for="nome">Genero (de 0 a 10)</label>
+            <input type="text" name="genero" id="generoInput">
+        </fieldset>
+        <fieldset class="radioBox">
+            <legend>Demografia</legend>
+            <div>
+                <input type="radio" name="demografia" value="shounen" id="shounenRadio">
+                <label for="shounenRadio">Shounen</label>
+            </div>
+            <div>
+                <input type="radio" name="demografia" value="seinen" id="seinenRadio">
+                <label for="seinenRadio">Seinen</label>
+            </div>
+            <div>                
+                <input type="radio" name="demografia" value="shoujo" id="shoujoRadio">
+                <label for="shoujoRadio">Shoujo</label>
+            </div>
+            <div>                
+                <input type="radio" name="demografia" value="josei" id="joseiRadio">
+                <label for="joseiRadio">Josei</label>
+            </div>
+        </fieldset>
+        <button type="button" id="ok">Enviar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+    <button class="btn" id="btnExibirItem">
+        >
+    </button>
+    <button class="btn exibirFormulario" id="btnFormulario">
+        +
+    </button>
+    <button class="btn exibirSobre" id="btnSobre">
+        ? 
+    </button> 
+    <h1>Animes</h1>
+    <fieldset class="campo">
+        <legend>Shounen</legend>
+        <div id="shounen">
+            <h1>Sem itens</h1>
+        </div>
+    </fieldset>
+    <fieldset class="campo">
+        <legend>Seinen</legend>
+        <div id="seinen">
+            <h1>Sem itens</h1>
+        </div>
+    </fieldset>
+    <fieldset class="campo">
+        <legend>Shoujo</legend>
+        <div id="shoujo">
+            <h1>Sem itens</h1>
+        </div>
+    </fieldset>
+    <fieldset class="campo">
+        <legend>Josei</legend>
+        <div id="josei">
+            <h1>Sem itens</h1>
+        </div>
+    </fieldset>
+    <script src="./js/script.js"></script>
+    <script src="./js/scriptTip.js"></script>
+    <script src="./js/scriptSobre.js"></script>
+</body>
+
+</html>

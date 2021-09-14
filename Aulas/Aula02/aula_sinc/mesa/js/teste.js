@@ -5,11 +5,11 @@ for (const item of op) {
     let jog = item;
     for (const item of op){
         let maq = item;
-        console.log(verificação(jog,maq)+" "+exibicao(jog,maq));
+        console.log(avaliar(jog,maq)+" "+exibicao(jog,maq));
     }
 }
 
-function verificação(num1, num2) {
+function avaliar(num1, num2) {
     let valor = num1-num2;
     let div = Math.abs(valor%2);
     if(valor == 0){
