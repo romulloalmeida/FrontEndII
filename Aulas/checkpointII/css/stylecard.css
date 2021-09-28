@@ -4,6 +4,25 @@ body{
     gap: 1px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    display:scroll;
+    position:fixed !important;
+    float: right;
+    display: inline;
+    top:90px;
+    right:30px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    font-size: 20px;
+}
+
 div{
     border: 1px solid;
 }

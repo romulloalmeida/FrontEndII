@@ -1,60 +1,52 @@
 // Script para fazer as validações
 
-// Validação de campos não vazios
-function camposValidados(){
-    let title = document.getElementById("title");
-    let dateEnd = document.getElementById("dateEnd");
-    let description = document.getElementById("description");
-    if(title.textContent.length == 0){
-        alert("Campo Título vazio!");
-    }
-    if(dateEnd.textContent.length == 0){
-        alert("Campo Data de Conclusão vazio!");
-        alert(dateEnd.value);
-    }
-    if(description.textContent.length <= 10){
-        alert("Campo Descrição precisa ter mais de 10 caracteres!");
+function listar(){
+	//se nao possuir nenhum local storage, nao fazer nada
+	if(localStorage.getItem('value') === null)
+		return;
+	
+	//captura os objetos de volta
+	var cardsLista = JSON.parse(localStorage.getItem('value'));
+	var card = document.getElementById("card");
+
+	//limpar o body toda vez que atualizar
+	card.innerHTML = '';
+	
+	for(var i = 0; i < cardsLista.length; i++){
+        criarCard(cardsLista[i].p,cardsLista[i].title,cardsLista[i].completed);
+	}
+}
+
+// Script para criar os cards
+
+// Função criarCard
+// Paramêtros: Id, Title, Completed
+// Retorna: Void
+// Faz: Cria um card com base nos dados informados
+function criarCard(p,title,completed){
+    // Criar os elementos para o card
+    let box = document.createElement('div');
+    let titulo = document.createElement('h1');
+    let paragrafo = document.createElement('p');
+
+    // Validação do Completed
+    if(completed){
+        titulo.setAttribute('class',"tachado");
+        paragrafo.setAttribute('class',"tachado");
     }
     else{
-        // return true;
-        document.getElementById("formularioTarefa").submit;
+        titulo.setAttribute('class',"negrito");
+        paragrafo.setAttribute('class',"negrito");
     }
+
+    // Colocar os dados dentro dos elementos criados
+    titulo.textContent = title;
+    paragrafo.textContent = p;
+
+    // Colocando os cards na página
+    document.getElementById("card").appendChild(box);
+    box.appendChild(titulo);
+    box.appendChild(paragrafo);
 }
 
-// Funcionalidades
-
-// document.getElementById("submit").addEventListener('click',camposValidados);
-
-
-// const camposValidados = () => { 
-//     let title = document.getElementById("title"); 
-//     let dateEnd = document.getElementById("dateEnd"); 
-//     let description = document.getElementById("description"); 
-    
-//     switch (preventDefault()) {
-//         case title:
-//             title.textContent.length == 0;
-//             alert("Campo Título vazio!");
-//             break;
-//         case textContent:
-//             dateEnd.textContent.length == 0;
-//             alert("Campo Data de Conclusão vazio!");
-//             break;
-//         case title:
-//             description.textContent.length <= 10;
-//             alert("Campo Descrição precisa ter mais de 10 caracteres!");
-//             break;
-//         default:
-//             false
-//             break;
-//     }
-// }
-
-function submit_form() {
-    if (camposValidados) {
-        document.getElementById("formularioTarefa").submit;
-    }
-    else {
-        alert("Verifique e corrija o preenchimento da tarefa!");
-    }
-}
+window.addEventListener('load',listar);

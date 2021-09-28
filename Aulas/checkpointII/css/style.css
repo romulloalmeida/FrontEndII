@@ -4,6 +4,33 @@ body{
     flex-wrap: wrap;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    display:scroll;
+    position:fixed !important;
+    float: right;
+    display: inline;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    font-size: 20px;
+}
+
+.btn01{
+    bottom:120px;
+    left:30px;
+}
+
+.btn02{
+    bottom:20px;
+    left:30px;
+}
+
 form{
     display: flex;
 }
